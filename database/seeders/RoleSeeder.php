@@ -52,30 +52,6 @@ class RoleSeeder extends Seeder
         Permission::findOrCreate('clientes.update', 'web')->syncRoles([$role1]);
         Permission::findOrCreate('clientes.destroy', 'web')->syncRoles([$role1]);
 
-        // Buscar o crear el permiso para las rutas de proveedores
-        Permission::findOrCreate('proveedores', 'web')->syncRoles([$role1, $role2]);
-        Permission::findOrCreate('proveedores.create', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('proveedores.store', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('proveedores.edit', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('proveedores.update', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('proveedores.destroy', 'web')->syncRoles([$role1]);
-
-        // Buscar o crear el permiso para las rutas de ventas
-        Permission::findOrCreate('ventas', 'web')->syncRoles([$role1, $role2]);
-        Permission::findOrCreate('ventas.create', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('ventas.store', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('ventas.edit', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('ventas.update', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('ventas.destroy', 'web')->syncRoles([$role1]);
-
-        // Buscar o crear el permiso para las rutas de compras
-        Permission::findOrCreate('compras', 'web')->syncRoles([$role1, $role2]);
-        Permission::findOrCreate('compras.create', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('compras.store', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('compras.edit', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('compras.update', 'web')->syncRoles([$role1]);
-        Permission::findOrCreate('compras.destroy', 'web')->syncRoles([$role1]);
-
         // Buscar o crear el permiso para las rutas de cotizaciones
         Permission::findOrCreate('cotizaciones', 'web')->syncRoles([$role1, $role2]);
         Permission::findOrCreate('cotizaciones.create', 'web')->syncRoles([$role1]);

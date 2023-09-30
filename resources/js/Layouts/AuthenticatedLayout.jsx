@@ -10,8 +10,7 @@ import {
     faBox,
     faChartLine,
     faClipboardList,
-    faClose, faDollar, faDropletSlash,
-    faFileInvoiceDollar,
+    faClose,
     faTags,
     faTools,
     faTruck,
@@ -341,49 +340,7 @@ export default function Authenticated({auth, header, children}) {
                                         <span className="ml-3">Clientes</span>
                                     </AppLink>
                                 </li>
-                                <li>
-                                    <AppLink
-                                        href={route("proveedores.index")}
-                                        active={route()
-                                            .current()
-                                            .includes("proveedores")}
-                                    >
-                                        <FontAwesomeIcon
-                                            icon={faTruck}
-                                            className="text-sm text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-6 h-6"
-                                        />
-                                        <span className="ml-3">Proveedores</span>
-                                    </AppLink>
-                                </li>
                                 <hr className="border-gray-800 dark:border-gray-400"/>
-                                <li>
-                                    <AppLink
-                                        href={route("pedidos.index")}
-                                        active={route()
-                                            .current()
-                                            .includes("pedidos")}
-                                    >
-                                        <FontAwesomeIcon
-                                            icon={faDollar}
-                                            className="text-xl text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-6 h-6"
-                                        />
-                                        <span className="ml-3">Ventas</span>
-                                    </AppLink>
-                                </li>
-                                <li>
-                                    <AppLink
-                                        href={route("compras.index")}
-                                        active={route()
-                                            .current()
-                                            .includes("compras")}
-                                    >
-                                        <FontAwesomeIcon
-                                            icon={faFileInvoiceDollar}
-                                            className="text-xl text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-6 h-6"
-                                        />
-                                        <span className="ml-3">Compras</span>
-                                    </AppLink>
-                                </li>
                                 <li>
                                     <AppLink
                                         href={route("cotizaciones.index")}

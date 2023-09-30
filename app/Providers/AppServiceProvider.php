@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\Producto;
-use App\Observers\ProductObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 
@@ -22,7 +20,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Producto::observe(ProductObserver::class);
         if (config('app.env') === 'production')
         {
             URL::forceScheme('https');
