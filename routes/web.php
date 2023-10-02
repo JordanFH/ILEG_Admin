@@ -25,6 +25,10 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+    if (Auth::check()) { // Verificar si el usuario está autenticado
+        return redirect()->route('dashboard'); // Redirigir al dashboard
+    }
+
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),

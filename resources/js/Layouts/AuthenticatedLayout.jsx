@@ -9,9 +9,9 @@ import {
     faBars,
     faBlackboard,
     faBox,
-    faChartLine,
     faClipboardList,
     faClose,
+    faHome,
     faTags,
     faTools,
     faUser,
@@ -233,13 +233,13 @@ export default function Authenticated({ auth, header, children }) {
                     >
                         <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
                             <div className="flex justify-between items-center mb-5">
-                                <a href="/" className="flex sm:hidden md:mr-24">
+                                <div className="sm:mt-5 mt-0 flex md:mr-24">
                                     <img
                                         src={logo}
-                                        className="h-8 mr-3"
+                                        className="h-10"
                                         alt="ILEG Logo"
                                     />
-                                </a>
+                                </div>
                                 <button
                                     data-drawer-target="logo-sidebar"
                                     data-drawer-toggle="logo-sidebar"
@@ -258,17 +258,6 @@ export default function Authenticated({ auth, header, children }) {
                                 </button>
                             </div>
 
-                            <div className="hidden sm:flex">
-                                <img
-                                    src={logo}
-                                    className="h-8 mr-3"
-                                    alt="ILEG Logo"
-                                />
-
-                                <span className="items-center pl-2.5 mt-2 mb-5 self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                                    Panel de control
-                                </span>
-                            </div>
                             <ul className="space-y-2">
                                 <li>
                                     <AppLink
@@ -276,7 +265,7 @@ export default function Authenticated({ auth, header, children }) {
                                         active={route().current("dashboard")}
                                     >
                                         <FontAwesomeIcon
-                                            icon={faChartLine}
+                                            icon={faHome}
                                             className="text-xl text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-6 h-6"
                                         />
                                         <span className="ml-3">Dashboard</span>
