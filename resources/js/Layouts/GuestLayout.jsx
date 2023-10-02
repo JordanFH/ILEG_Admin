@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo.png";
 import { Link } from "@inertiajs/react";
 import { useState, useEffect } from "react";
 
@@ -25,9 +25,7 @@ export default function Guest({ children }) {
     }
 
     const [colorTheme, setTheme] = useDarkSide();
-    const [darkSide, setDarkSide] = useState(
-        colorTheme === "light"
-    );
+    const [darkSide, setDarkSide] = useState(colorTheme === "light");
 
     const handleLoad = () => {
         setDarkSide(true);
@@ -40,9 +38,14 @@ export default function Guest({ children }) {
         >
             <div>
                 <Link href="/">
-                    <img src={logo} className="flex mx-auto" alt="" />
+                    <img
+                        src={logo}
+                        className="flex mx-auto"
+                        alt="Logo ILEG"
+                        width="175px"
+                    />
                     <h2 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
-                        Skac Corporation
+                        Instituto Latinoamericano en Educación Global
                     </h2>
                 </Link>
             </div>

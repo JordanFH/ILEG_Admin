@@ -1,6 +1,6 @@
 import { Link, Head } from "@inertiajs/react";
 import background from "../assets/background.jpg";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
 
 export default function Welcome(props) {
@@ -64,25 +64,26 @@ export default function Welcome(props) {
                                 <img
                                     src={logo}
                                     className="flex mx-auto"
-                                    alt="Logo Skac Corporation"
+                                    alt="Logo ILEG"
                                     width="175px"
                                 />
                                 <h2 className="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
-                                    Skac Corporation
+                                    Instituto Latinoamericano en Educación
+                                    Global
                                 </h2>
 
                                 <p className="text-center mt-6 text-gray-500 dark:text-gray-200">
                                     {props.auth.user ? (
                                         <>
                                             {greeting}, has iniciado sesión.
-                                            Puedes ingresar <br /> al sistema de
-                                            Skac Corporation.
+                                            Puedes ingresar <br /> a la aula virtual
+                                            de ILEG.
                                         </>
                                     ) : (
                                         <>
                                             {greeting}, debes iniciar sesión
-                                            para poder ingresar <br /> al
-                                            sistema de Skac Corporation.
+                                            para poder ingresar <br /> a la aula virtual
+                                            de ILEG.
                                         </>
                                     )}
                                 </p>

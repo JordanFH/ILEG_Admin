@@ -1,33 +1,33 @@
-import React, {useEffect, useState} from "react";
-import logo from "@/assets/logo.svg";
+import React, { useEffect, useState } from "react";
+import logo from "@/assets/logo.png";
 import Dropdown from "@/Components/Dropdown";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import Switcher from "@/Components/DarkMode";
 import AppLink from "@/Components/AppLink";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faBars,
+    faBlackboard,
     faBox,
     faChartLine,
     faClipboardList,
     faClose,
     faTags,
     faTools,
-    faTruck,
-    faUser, faUserGear,
+    faUser,
+    faUserGear,
     faUserGroup,
     faUsers,
 } from "@fortawesome/free-solid-svg-icons";
-import {useMediaQuery} from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 import NProgress from "nprogress";
-import {faScaleBalanced} from "@fortawesome/free-solid-svg-icons/faScaleBalanced";
 
-export default function Authenticated({auth, header, children}) {
+export default function Authenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
     const [isSmallScreen, setIsSmallScreen] = useState(
-        useMediaQuery({maxDeviceWidth: 639})
+        useMediaQuery({ maxDeviceWidth: 639 })
     );
 
     const [isPanelOpen, setIsPanelOpen] = useState(false);
@@ -95,21 +95,18 @@ export default function Authenticated({auth, header, children}) {
                                         className="p-1 text-2xl"
                                     />
                                 </button>
-                                <a href="/" className="hidden sm:flex md:mr-24">
-                                    <img
-                                        src={logo}
-                                        className="h-8 mr-3"
-                                        alt="Skac Logo"
+                                <div className="hidden sm:flex md:mr-24">
+                                    <FontAwesomeIcon
+                                        icon={faBlackboard}
+                                        className="py-1 mr-3 text-xl sm:text-2xl dark:text-white"
                                     />
-                                    <span
-                                        className="hidden lg:flex self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                                        Skac Corporation
+                                    <span className="hidden lg:flex self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+                                        Aula Virtual (Administrador)
                                     </span>
-                                    <span
-                                        className="hidden sm:flex lg:hidden self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                                        Skac
-                                    </span>
-                                </a>
+                                    {/* <span className="hidden sm:flex lg:hidden self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+                                        ILEG
+                                    </span> */}
+                                </div>
                             </div>
                         </div>
 
@@ -158,7 +155,7 @@ export default function Authenticated({auth, header, children}) {
                                     </Dropdown>
                                 </div>
                             </div>
-                            <Switcher/>
+                            <Switcher />
                         </div>
 
                         <div className="flex items-center sm:hidden">
@@ -227,7 +224,7 @@ export default function Authenticated({auth, header, children}) {
                 <React.Fragment>
                     <aside
                         id="logo-sidebar"
-                        className={`fixed top-0 left-0 z-40 w-64 h-screen sm:pt-10 pt-4 transition-transform bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700 ${
+                        className={`fixed top-0 left-0 z-40 w-64 h-screen sm:pt-0 pt-4 transition-transform bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700 ${
                             isSmallScreen && !isPanelOpen
                                 ? "-translate-x-full"
                                 : ""
@@ -240,12 +237,8 @@ export default function Authenticated({auth, header, children}) {
                                     <img
                                         src={logo}
                                         className="h-8 mr-3"
-                                        alt="Skac Logo"
+                                        alt="ILEG Logo"
                                     />
-                                    <span
-                                        className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                                        Skac
-                                    </span>
                                 </a>
                                 <button
                                     data-drawer-target="logo-sidebar"
@@ -265,10 +258,17 @@ export default function Authenticated({auth, header, children}) {
                                 </button>
                             </div>
 
-                            <span
-                                className="hidden sm:flex items-center pl-2.5 mt-2 mb-5 self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                                Panel de control
-                            </span>
+                            <div className="hidden sm:flex">
+                                <img
+                                    src={logo}
+                                    className="h-8 mr-3"
+                                    alt="ILEG Logo"
+                                />
+
+                                <span className="items-center pl-2.5 mt-2 mb-5 self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                                    Panel de control
+                                </span>
+                            </div>
                             <ul className="space-y-2">
                                 <li>
                                     <AppLink
@@ -282,7 +282,7 @@ export default function Authenticated({auth, header, children}) {
                                         <span className="ml-3">Dashboard</span>
                                     </AppLink>
                                 </li>
-                                <hr className="border-gray-800 dark:border-gray-400"/>
+                                <hr className="border-gray-800 dark:border-gray-400" />
                                 <li>
                                     <AppLink
                                         href={route("categorias.index")}
@@ -325,7 +325,7 @@ export default function Authenticated({auth, header, children}) {
                                         <span className="ml-3">Servicios</span>
                                     </AppLink>
                                 </li>
-                                <hr className="border-gray-800 dark:border-gray-400"/>
+                                <hr className="border-gray-800 dark:border-gray-400" />
                                 <li>
                                     <AppLink
                                         href={route("clientes.index")}
@@ -340,7 +340,7 @@ export default function Authenticated({auth, header, children}) {
                                         <span className="ml-3">Clientes</span>
                                     </AppLink>
                                 </li>
-                                <hr className="border-gray-800 dark:border-gray-400"/>
+                                <hr className="border-gray-800 dark:border-gray-400" />
                                 <li>
                                     <AppLink
                                         href={route("cotizaciones.index")}
@@ -352,14 +352,18 @@ export default function Authenticated({auth, header, children}) {
                                             icon={faClipboardList}
                                             className="text-xl text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white w-6 h-6"
                                         />
-                                        <span className="ml-3">Cotizaciones</span>
+                                        <span className="ml-3">
+                                            Cotizaciones
+                                        </span>
                                     </AppLink>
                                 </li>
                                 <hr className="border-gray-800 dark:border-gray-400" />
                                 <li>
                                     <AppLink
                                         href={route("users.index")}
-                                        active={route().current().includes("users")}
+                                        active={route()
+                                            .current()
+                                            .includes("users")}
                                     >
                                         <FontAwesomeIcon
                                             icon={faUserGroup}
@@ -371,7 +375,9 @@ export default function Authenticated({auth, header, children}) {
                                 <li>
                                     <AppLink
                                         href={route("roles.index")}
-                                        active={route().current().includes("roles")}
+                                        active={route()
+                                            .current()
+                                            .includes("roles")}
                                     >
                                         <FontAwesomeIcon
                                             icon={faUserGear}
