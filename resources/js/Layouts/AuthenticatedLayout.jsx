@@ -100,12 +100,9 @@ export default function Authenticated({ auth, header, children }) {
                                         icon={faBlackboard}
                                         className="py-1 mr-3 text-xl sm:text-2xl dark:text-white"
                                     />
-                                    <span className="hidden lg:flex self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                                        Aula Virtual (Administrador)
+                                    <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+                                        Aula Virtual
                                     </span>
-                                    {/* <span className="hidden sm:flex lg:hidden self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                                        ILEG
-                                    </span> */}
                                 </div>
                             </div>
                         </div>

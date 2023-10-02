@@ -40,11 +40,11 @@ export default function Dashboard(props) {
             errors={props.errors}
             header={
                 <h2 className="sm:ml-0 ml-3 font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    Crear Role
+                    Crear Rol
                 </h2>
             }
         >
-            <Head title="roles" />
+            <Head title="Roles" />
 
             <div className="py-8">
                 <div className="max-w-8xl mx-auto px-6 lg:px-8">
@@ -67,7 +67,7 @@ export default function Dashboard(props) {
                                 <div className="flex flex-col">
                                     <div className="mb-4">
                                         <label className="text-gray-900 dark:text-gray-100">
-                                            Nombre del Rol a crear
+                                            Nombre del rol a crear
                                             <span className="text-red-500 ml-1">*</span>
                                         </label>
                                         <input
@@ -96,24 +96,25 @@ export default function Dashboard(props) {
                                         </label>
 
                                         {dataP.map((permission) => (
-                                            <li key={permission.id}>
+                                            <li key={permission.id} className="text-gray-900 dark:text-gray-100 list-none">
                                                 <label>
                                                     <input
                                                         type="checkbox"
                                                         value={permission.id}
                                                         checked={permisosSeleccionados.includes(permission.id)}
                                                         onChange={() => handleCheckboxChange(permission.id)}
+                                                        className="mr-2"
                                                     />
-                                                    {permission.description}
+                                                    {permission.name}
                                                 </label>
                                             </li>
                                         ))}
                                     </div>
-                                    <div>
+                                    <div className="text-gray-900 dark:text-gray-100">
                                         <h3>Permisos seleccionados:</h3>
-                                        <ul>
+                                        <ul className="ml-5 list-disc">
                                             {permisosSeleccionados.map((id) => (
-                                                <li key={id}>{permissions.find(permiso => permiso.id === id).description}</li>
+                                                <li key={id}>{permissions.find(permiso => permiso.id === id).name}</li>
                                             ))}
                                         </ul>
                                     </div>
